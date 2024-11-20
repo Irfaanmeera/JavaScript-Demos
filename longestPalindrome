@@ -1,0 +1,16 @@
+const str = "xoxppopphfjwewrioir"
+
+function longestPalindrome(str){
+    const count ={}
+    let res = 0
+
+    for(let char of str){
+        count[char] = (count[char]+1)||1
+        if(count[char]%2===0){
+            res+=2
+        }
+    }
+    return str.length>res?res+1:res
+}
+
+console.log(longestPalindrome(str))
